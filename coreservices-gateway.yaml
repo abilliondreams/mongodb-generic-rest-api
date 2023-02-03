@@ -1,0 +1,41 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: coreservices-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: coreservices
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - coreservices-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /api                
+    route: 
+    - destination: 
+        host: coreservices 
+        port:
+          number: 8000 
+  - match:
+    - uri:
+        prefix: /nodelogs                
+    route: 
+    - destination: 
+        host: coreservices 
+        port:
+          number: 8090 

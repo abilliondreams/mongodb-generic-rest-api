@@ -1,0 +1,42 @@
+{
+  "name": "article-node.js-rest-api-doc",
+  "version": "1.0.0",
+  "description": "documenting a rest api using swagger",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "swagger-node.js-rest-api-doc"
+  },
+  "author": "mwangikibui",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "3.0.0",
+    "csv-reader": "1.0.8",
+    "event-stream": "4.0.1",
+    "express": "^4.17.1",
+    "fast-csv": "^4.3.6",
+    "lowdb": "^1.0.0",
+    "mongodb": "4.6.0",
+    "morgan": "^1.10.0",
+    "multer": "1.4.5-lts.1",
+    "nanoid": "^3.1.22",
+    "nodemon": "^2.0.7",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "8.3.2",
+    "dotenv":"16.0.1"
+  },
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "*.test.ts",
+      "db/*"
+    ],
+    "delay": 2
+  }
+}
